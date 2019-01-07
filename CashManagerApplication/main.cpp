@@ -45,9 +45,13 @@ int main(int argc, char *argv[])
     view.show();
     QObject *object = view.rootObject();
     QObject *button = object->findChild<QQuickItem*>(QString("button"), Qt::FindChildrenRecursively);
+    QObject *b_createBill = object->findChild<QQuickItem*>(QString("createBill"), Qt::FindChildrenRecursively);
+
     Keypad myClass;
     QObject::connect(button, SIGNAL(checkUserSignal(QString)),
                          &myClass, SLOT(checkUser(QString)));
-
+    CashManager myCashManager;
+    QObject::connect(b_createBill, SIGNAL(createBillSignal(QString)),
+                         &myCashManager, SLOT(createBill(QString)));
     return app.exec();
 }

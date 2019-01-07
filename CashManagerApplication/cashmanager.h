@@ -2,6 +2,8 @@
 #define CASHMANAGER_H
 
 #include <QObject>
+#include "databasehandler.h"
+#include "createbill.h"
 
 class CashManager: public QObject
 {
@@ -23,6 +25,7 @@ signals:
 
 public slots:
     void checkUser(const QString &code);
+    void createBill(const QString &code);
 
 private:
     QString textField;

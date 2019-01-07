@@ -1,4 +1,4 @@
-QT += quick
+QT += quick sql core network widgets printsupport gui
 CONFIG += c++11
 
 # The following define makes your compiler emit warnings if you use
@@ -15,7 +15,14 @@ DEFINES += QT_DEPRECATED_WARNINGS
 SOURCES += \
         main.cpp \
     keypad.cpp \
-    cashmanager.cpp
+    cashmanager.cpp \
+    bill.cpp \
+    bill_product.cpp \
+    cashier.cpp \
+    categorie.cpp \
+    createbill.cpp \
+    databasehandler.cpp \
+    product.cpp
 
 RESOURCES += qml.qrc
 
@@ -32,4 +39,11 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 
 HEADERS += \
     keypad.h \
-    cashmanager.h
+    cashmanager.h \
+    bill.h \
+    bill_product.h \
+    cashier.h \
+    categorie.h \
+    createbill.h \
+    databasehandler.h \
+    product.h

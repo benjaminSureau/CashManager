@@ -65,3 +65,8 @@ void CashManager::checkUser(const QString &code)
     //TODO check user id
     qDebug() << code;
 }
+
+void CashManager::createBill(const QString &code){
+    DataBaseHandler *db = new DataBaseHandler();
+    CreateBill *b = new CreateBill(db, 1);
+}

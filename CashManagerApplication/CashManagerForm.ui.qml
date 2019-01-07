@@ -7,7 +7,7 @@ Item {
     property alias b_cards: b_cards
     property alias b_cheques: b_cheques
     property alias b_especes: b_especes
-
+    property alias b_createBill: b_createBill
     Rectangle {
         id: rectangle
         color: "#ffffff"
@@ -222,20 +222,15 @@ Item {
         }
 
         Button {
-            id: button6
+            id: b_createBill
+            objectName: qsTr("createBill")
             x: 603
             y: 812
             width: 110
             height: 90
             text: qsTr("Reçu")
             font.pointSize: 16
-            Button {
-                id: button7
-                x: 618
-                y: 706
-                height: 45
-                text: qsTr("Button")
-            }
+            signal createBillSignal(string code)
         }
 
         Rectangle {

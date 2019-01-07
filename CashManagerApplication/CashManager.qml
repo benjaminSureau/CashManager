@@ -21,6 +21,7 @@ ApplicationWindow {
             b_especes.highlighted = true
             b_cheques.highlighted = false
         }
+        b_createBill.onClicked: b_createBill.createBillSignal("test")
     }
     CashManager {
         id: cashManager
