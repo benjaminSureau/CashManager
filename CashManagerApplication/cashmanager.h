@@ -21,5 +21,7 @@ public slots:
 private:
     QString textField;
     void changeValue(const QString &digit);
+    void createBill(const QString &digit);
+
 };
 #endif // CASHMANAGER_H

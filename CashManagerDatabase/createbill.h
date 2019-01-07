@@ -1,3 +1,14 @@
+/**
+ * \file createbill.cpp
+ * \brief création de facture.
+ * \author Thomas
+ * \version 0.2
+ * \date 02 janvier 2019
+ *
+ * Ce programme permet de créer et imprimer les factures
+ *
+ */
+
 #ifndef CREATEBILL_H
 #define CREATEBILL_H
 
@@ -16,6 +27,7 @@ public:
     CreateBill(DataBaseHandler *db, int billId);
 
 private slots:
+
     void document(QString filename);
 
     void createCss(int billId);
