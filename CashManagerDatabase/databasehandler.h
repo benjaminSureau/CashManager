@@ -29,7 +29,7 @@ public:
     bool insertCategorie(QString name, float tax);
     QList<Bill_Product> selectAllBill_Product();
     Bill_Product* selectBill_Product(QString codeProd, int idBill);
-    bool insertBill_Product(int bill, int product, int quantity);
+    bool insertBill_Product(int bill, QString product, int quantity);
     QList<Product> selectAllProduct();
     Product* selectProduct(QString code);
     bool insertProduct(QString code, QString name, QString price, int categorie);

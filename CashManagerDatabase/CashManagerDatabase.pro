@@ -1,5 +1,4 @@
-QT -= gui
-QT += sql
+QT += sql core network widgets printsupport gui
 
 CONFIG += c++11 console
 CONFIG -= app_bundle
@@ -17,12 +16,14 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += \
         main.cpp \
+    databasehandler.cpp \
+    createbill.cpp \
     bill.cpp \
     bill_product.cpp \
     cashier.cpp \
     categorie.cpp \
-    product.cpp \
-    databasehandler.cpp
+    product.cpp
+
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
@@ -31,6 +32,7 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 
 HEADERS += \
     databasehandler.h \
+    createbill.h\
     bill.h \
     bill_product.h \
     cashier.h \

@@ -234,7 +234,7 @@ bool DataBaseHandler::insertBill(QString paymentMode, int cashier){
     return false;
 }
 
-bool DataBaseHandler::insertBill_Product(int bill, int product, int quantity){
+bool DataBaseHandler::insertBill_Product(int bill, QString product, int quantity){
     if(_cashmanager.isOpen() || _cashmanager.open()){
         QSqlQuery res(_cashmanager);
         res.prepare("INSERT INTO Bill_Product (idBill, codeProduct, quantity)  VALUES(?,?,?)");
