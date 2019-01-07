@@ -4,6 +4,10 @@ import QtQuick.Controls 2.0
 Item {
     width: 888
     height: 905
+    property alias b_cards: b_cards
+    property alias b_cheques: b_cheques
+    property alias b_especes: b_especes
+
     Rectangle {
         id: rectangle
         color: "#ffffff"
@@ -55,8 +59,10 @@ Item {
 
                     Text {
                         id: element6
-                        x: 176
+                        x: 155
                         y: 18
+                        width: 226
+                        height: 19
                         text: qsTr("0")
                         font.pixelSize: 16
                     }
@@ -84,30 +90,37 @@ Item {
             border.width: 2
 
             Button {
-                id: button
+                id: b_cards
                 x: 26
                 y: 85
                 width: 100
                 height: 100
-                text: qsTr("Carte")
+                text: qsTr("Cards")
+                checkable: false
+                highlighted: false
+                flat: false
+                font.pointSize: 20
             }
 
             Button {
-                id: button1
-                x: 199
+                id: b_cheques
+                x: 156
                 y: 85
-                width: 100
+                width: 143
                 height: 100
                 text: qsTr("Cheques")
+                font.pointSize: 20
             }
 
             Button {
-                id: button2
-                x: 359
+                id: b_especes
+                x: 333
                 y: 85
-                width: 100
+                width: 141
                 height: 100
                 text: qsTr("Especes")
+                highlighted: false
+                font.pointSize: 20
             }
 
             Text {
@@ -119,11 +132,14 @@ Item {
             }
 
             ComboBox {
-                id: comboBox
-                x: 100
-                y: 35
-                width: 80
-                height: 20
+                id: cb_timeout
+                x: 101
+                y: 24
+                width: 113
+                height: 40
+                font.pointSize: 14
+                model: [ "10", "20", "30", "40", "50", "60", "70", "80",
+                    "90", "100", "110", "120", "130", "140", "150", "160", "170", "180" ]
             }
 
             Text {
@@ -135,11 +151,13 @@ Item {
             }
 
             ComboBox {
-                id: comboBox1
-                x: 379
-                y: 35
+                id: cb_maxco
+                x: 388
+                y: 24
                 width: 80
-                height: 20
+                height: 40
+                font.pointSize: 14
+                model: [ "1", "2", "3" ]
             }
         }
 
@@ -194,8 +212,7 @@ Item {
         }
 
         Button {
-            id: b_createBill
-            objectName: qsTr("createBill")
+            id: button6
             x: 603
             y: 812
             width: 110

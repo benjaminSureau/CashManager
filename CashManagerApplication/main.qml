@@ -5,7 +5,6 @@ import QtQuick.Window 2.2
 
 Item {
    Keypad{
-       flags: Qt.FramelessWindowHint
        width: 505
        height: 590
        visible: true

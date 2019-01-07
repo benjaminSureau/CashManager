@@ -3,7 +3,7 @@ import QtQuick.Controls 2.0
 import QtQuick.Window 2.0
 import io.qt.examples.keypad 1.0
 
-Window {
+ApplicationWindow {
     id: keypadWindow
     KeypadForm{
         b_enter.onClicked: checkUserSignal(text1.text)
@@ -13,6 +13,4 @@ Window {
     Keypad {
         id: keypad
     }
-
-
 }

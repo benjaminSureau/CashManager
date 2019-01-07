@@ -48,9 +48,6 @@ int main(int argc, char *argv[])
     Keypad myClass;
     QObject::connect(button, SIGNAL(checkUserSignal(QString)),
                          &myClass, SLOT(checkUser(QString)));
-    CashManager myCashManager;
-    QObject::connect(button, SIGNAL(checkUserSignal(QString)),
-                         &myClass, SLOT(checkUser(QString)));
 
     return app.exec();
 }
