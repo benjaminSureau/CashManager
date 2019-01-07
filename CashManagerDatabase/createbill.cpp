@@ -1,14 +1,3 @@
-/**
- * \file bill.cpp
- * \brief création de facture.
- * \author Thomas
- * \version 0.2
- * \date 02 janvier 2019
- *
- * Ce programme permet de créer et imprimer les factures
- *
- */
-
 #include <QFile>
 #include <QCoreApplication>
 #include <QTextStream>

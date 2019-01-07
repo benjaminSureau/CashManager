@@ -26,6 +26,7 @@ public:
     CreateBill(DataBaseHandler *db, int billId);
 
 private slots:
+
     void document(QString filename);
 
     /**

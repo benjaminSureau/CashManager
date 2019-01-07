@@ -4,6 +4,7 @@ import QtQuick.Controls 2.0
 Item {
     width: 888
     height: 905
+    property alias b_createBill: b_createBill    
     Rectangle {
         id: rectangle
         color: "#ffffff"
