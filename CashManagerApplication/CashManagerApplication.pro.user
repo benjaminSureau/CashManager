@@ -1,10 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE QtCreatorProject>
-<<<<<<< HEAD
-<!-- Written by QtCreator 4.8.0, 2019-01-07T11:48:30. -->
-=======
-<!-- Written by QtCreator 4.8.0, 2019-01-03T16:59:37. -->
->>>>>>> 59dc29bfb03937adda359774c12111ef620335d4
+<!-- Written by QtCreator 4.8.0, 2019-01-07T14:44:50. -->
 <qtcreator>
  <data>
   <variable>EnvironmentId</variable>
@@ -299,25 +295,19 @@
     </valuelist>
     <value type="int" key="PE.EnvironmentAspect.Base">2</value>
     <valuelist type="QVariantList" key="PE.EnvironmentAspect.Changes"/>
-    <value type="QString" key="ProjectExplorer.ProjectConfiguration.DefaultDisplayName">CashManagerApplication</value>
-<<<<<<< HEAD
-    <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName">CashManagerApplication2</value>
-    <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">Qt4ProjectManager.Qt4RunConfiguration:C:/Users/ben11/Documents/CashManager/CashManagerApplication/CashManagerApplication.pro</value>
-=======
+    <value type="QString" key="ProjectExplorer.CustomExecutableRunConfiguration.Executable"></value>
+    <value type="QString" key="ProjectExplorer.ProjectConfiguration.DefaultDisplayName">Custom Executable</value>
     <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName"></value>
-    <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">Qt4ProjectManager.Qt4RunConfiguration:C:/Users/43cb886c4537/Documents/cashmanager/CashManager/CashManagerApplication/CashManagerApplication.pro</value>
->>>>>>> 59dc29bfb03937adda359774c12111ef620335d4
-    <value type="QString" key="Qt4ProjectManager.Qt4RunConfiguration.ProFile">CashManagerApplication.pro</value>
+    <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">ProjectExplorer.CustomExecutableRunConfiguration</value>
     <value type="QString" key="RunConfiguration.Arguments"></value>
     <value type="uint" key="RunConfiguration.QmlDebugServerPort">3768</value>
     <value type="bool" key="RunConfiguration.UseCppDebugger">false</value>
     <value type="bool" key="RunConfiguration.UseCppDebuggerAuto">true</value>
-    <value type="bool" key="RunConfiguration.UseLibrarySearchPath">true</value>
     <value type="bool" key="RunConfiguration.UseMultiProcess">false</value>
     <value type="bool" key="RunConfiguration.UseQmlDebugger">false</value>
     <value type="bool" key="RunConfiguration.UseQmlDebuggerAuto">true</value>
     <value type="QString" key="RunConfiguration.WorkingDirectory"></value>
-    <value type="QString" key="RunConfiguration.WorkingDirectory.default">C:/Users/43cb886c4537/Documents/cashmanager/CashManager/build-CashManagerApplication-Desktop_Qt_5_12_0_MinGW_64_bit-Debug</value>
+    <value type="QString" key="RunConfiguration.WorkingDirectory.default"></value>
    </valuemap>
    <value type="int" key="ProjectExplorer.Target.RunConfigurationCount">1</value>
   </valuemap>
