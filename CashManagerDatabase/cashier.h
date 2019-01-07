@@ -7,10 +7,10 @@
 class Cashier
 {
 private:
+public:
     int _id;
     QString _name;
     int _code;
-public:
     Cashier(int id, QString name, int code);
     QString toString();
 };

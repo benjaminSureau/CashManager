@@ -38,7 +38,19 @@ CreateBill::CreateBill(DataBaseHandler *db, int billId)
     QFont titleFont("Times New Roman", 8, QFont::Bold);
 
     css = "";
-    createCss();
+    createCss(bill.first()._bill->_id);
+
+    float ttc;
+    float ht;
+    float taxes;
+    for(Bill_Product b : bill){
+        addElem(b);
+        ht+=b._product->_price * b._quantity;
+        ttc=b._product->_price * b._quantity * ((100+b._product->_categorie->_tax)/100);
+    }
+    taxes = ttc - ht;
+    endCss(ttc, ht, taxes);
+
 
     QTextDocument document;
 
@@ -46,13 +58,7 @@ CreateBill::CreateBill(DataBaseHandler *db, int billId)
     document.print(&printer);
 }
 
-QString CreateBill::currDate()
-{
-    QDate date = QDate::currentDate();
-    return date.toString("dd.MM.yyyy");
-}
-
-void CreateBill::createCss()
+void CreateBill::createCss(int billId)
 {
     css = "<div align=center>"
           "POMMED’EPITECH <br>"
@@ -66,34 +72,45 @@ void CreateBill::createCss()
     css+= dateS;
     css+= "<div>"
           "Ticket N° ";
-    qint16 i = 3;
-    QString num = QString::number(i);
+    QString num = QString::number(billId);
     css+= num;
 
     css+= "</div>"
           "<div align=right>"
           " EUR"
           "</div>";
+}
 
-    css +="<div align=left>Pc nul a chier</div>"
-          "<div align=right>9</div>"
-          "<br>";
-    css +="<div align=left>Pc nul a chier</div>"
-          "<div align=right>9</div>"
-          "<br>";
+void CreateBill::addElem(Bill_Product b)
+{
+    QString name = b._product->_name;
+    css +="<div align=left>";
+    css += name;
+    css += " ";
+    css += QString::number(b._product->_price);
 
+    css += "€x";
+    css += QString::number(b._quantity);
+    css += "</div>"
+          "<div align=right>";
+    int valArtTot = b._product->_price * b._quantity;
+    QString num = QString::number(valArtTot);
+    css += num;
+    css += "€</div>"
+          "<br>";
+}
+
+void CreateBill::endCss(float ttc, float ht, float taxes)
+{
     css +="<div align=right>TTC: ";
-    QString ttc = QString::number(i);
-    css+= ttc;
-    css +="</div>";
+    QString Sttc = QString::number(ttc);
+    css+= Sttc;
+    css +="€</div>";
     css +="<div align=right>Total HT: ";
-    QString ht = QString::number(i);
-    css+= ht;
-    css += " Total Taxes: ";
-    QString t = QString::number(i);
-    css+= t;
-    css +="</div>";
-
-
-
+    QString Sht = QString::number(ht);
+    css+= Sht;
+    css += "€ Total Taxes: ";
+    QString St = QString::number(taxes);
+    css+= St;
+    css +="€</div>";
 }

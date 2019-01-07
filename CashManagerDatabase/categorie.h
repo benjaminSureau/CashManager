@@ -7,10 +7,10 @@
 class Categorie
 {
 private:
+public:
     int _id;
     QString _name;
     float _tax;
-public:
     Categorie(int id, QString name, float tax);
     QString toString();
 };

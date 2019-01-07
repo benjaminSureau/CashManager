@@ -8,11 +8,11 @@
 class Bill
 {
 private:
+public:
     int _id;
     QDateTime _sellingDate;
     QString _paymentMode;
     Cashier *_cashier;
-public:
     Bill(int id, QDateTime sellDate, QString paymentMode, Cashier *cashier);
     Cashier* getCashier();
     QString toString();

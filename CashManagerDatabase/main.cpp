@@ -29,7 +29,6 @@ int main(int argc, char *argv[])
 #include <QDebug>
 #include <QApplication>
 
-
 #include "createbill.h"
 
 int main(int argc, char *argv[])
