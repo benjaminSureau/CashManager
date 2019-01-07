@@ -68,14 +68,25 @@ Item {
                     }
                 }
 
-                ItemDelegate {
-                    id: itemDelegate
-                    x: 40
-                    y: 75
-                    width: 302
-                    height: 464
-                    text: qsTr("Item Delegate")
-                    font.family: "Verdana"
+                Text {
+                    id: text1
+                    x: 8
+                    y: 15
+                    width: 284
+                    height: 519
+                    text: cashManager.text1
+                    font.pixelSize: 20
+                }
+
+                Text {
+                    id: text2
+                    x: 309
+                    y: 15
+                    width: 64
+                    height: 519
+                    text: cashManager.text2
+                    font.pixelSize: 20
+                    horizontalAlignment: Text.AlignRight
                 }
             }
         }
@@ -138,8 +149,7 @@ Item {
                 width: 113
                 height: 40
                 font.pointSize: 14
-                model: [ "10", "20", "30", "40", "50", "60", "70", "80",
-                    "90", "100", "110", "120", "130", "140", "150", "160", "170", "180" ]
+                model: ["10", "20", "30", "40", "50", "60", "70", "80", "90", "100", "110", "120", "130", "140", "150", "160", "170", "180"]
             }
 
             Text {
@@ -157,7 +167,7 @@ Item {
                 width: 80
                 height: 40
                 font.pointSize: 14
-                model: [ "1", "2", "3" ]
+                model: ["1", "2", "3"]
             }
         }
 
