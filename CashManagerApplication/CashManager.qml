@@ -4,5 +4,11 @@ import io.qt.examples.keypad 1.0
 
 
 ApplicationWindow {
-    CashManagerForm{}
+    id: cashManagerWindow
+    CashManagerForm{
+
+    }
+    Keypad {
+        id: keypad
+    }
 }

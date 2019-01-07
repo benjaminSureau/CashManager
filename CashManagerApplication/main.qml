@@ -8,11 +8,10 @@ Item {
        flags: Qt.FramelessWindowHint
        width: 505
        height: 590
-       visible: false
+       visible: true
    }
 
    CashManager{
-       flags: Qt.FramelessWindowHint
        width: 888
        height: 905
        visible: true

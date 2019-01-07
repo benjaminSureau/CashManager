@@ -4,6 +4,8 @@
 #include <QDebug>
 #include <QString>
 #include "keypad.h"
+#include "cashmanager.h"
+
 
 int main(int argc, char *argv[])
 {
@@ -12,6 +14,7 @@ int main(int argc, char *argv[])
     QGuiApplication app(argc, argv);
 
     qmlRegisterType<Keypad>("io.qt.examples.keypad", 1, 0, "Keypad");
+    qmlRegisterType<CashManager>("io.qt.examples.cashmanager", 1, 0, "CashManager");
 
 //    QQmlApplicationEngine engine;
 //    engine.load(QUrl(QStringLiteral("qrc:/main.qml")));
@@ -40,7 +43,11 @@ int main(int argc, char *argv[])
     QQuickView view;
     view.setSource(QUrl(QStringLiteral("qrc:/main.qml")));
     view.show();
-
+    QObject *object = view.rootObject();
+    QObject *button = object->findChild<QQuickItem*>(QString("button"), Qt::FindChildrenRecursively);
+    Keypad myClass;
+    QObject::connect(button, SIGNAL(checkUserSignal(QString)),
+                         &myClass, SLOT(checkUser(QString)));
 
     return app.exec();
 }
