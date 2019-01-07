@@ -18,8 +18,9 @@ public:
 private slots:
     void document(QString filename);
 
-    QString currDate();
-    void createCss();
+    void createCss(int billId);
+    void addElem(Bill_Product b);
+    void endCss(float ttc, float ht, float taxes);
 
 public:
     QString css;

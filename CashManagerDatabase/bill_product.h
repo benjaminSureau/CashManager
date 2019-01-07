@@ -8,10 +8,10 @@
 class Bill_Product
 {
 private:
+public:
     Bill *_bill;
     Product *_product;
     int _quantity;
-public:
     Bill_Product(Bill *bill, Product *product, int quantity);
     Product* getProduct();
     Bill* getBill();

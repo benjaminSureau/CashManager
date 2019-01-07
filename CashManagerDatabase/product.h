@@ -7,11 +7,11 @@
 class Product
 {
 private:
+public:
     QString _code;
     QString _name;
     float _price;
     Categorie *_categorie;
-public:
     Product(QString code, QString name, float price, Categorie *categorie);
     Categorie *getCategorie();
     QString toString();
