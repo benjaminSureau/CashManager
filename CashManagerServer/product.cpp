@@ -1,6 +1,6 @@
 #include "product.h"
 
-Product::Product(string c, string n, float p, Categorie* cat)
+Product::Product(string c, string n, double p, Categorie* cat)
 {
     this->code = c;
     this->nom = n;
@@ -16,7 +16,7 @@ string Product::getNom() {
     return this->nom;
 }
 
-float Product::getPrix() {
+double Product::getPrix() {
     return this->prix;
 }
 
@@ -26,7 +26,7 @@ Categorie* Product::getCategorie() {
 
 
 float Product::getPrixAvecTaxes() {
-    return this->categorie->getTaxe() * this->prix;
+    return ((100 + static_cast<float>(this->categorie->getTaxe())) * static_cast<float>(this->prix)) / 100;
 }
 
 bool Product::operator <(const Product& p) const

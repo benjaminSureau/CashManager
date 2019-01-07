@@ -159,7 +159,7 @@ Item {
                 y: 24
                 width: 383
                 height: 38
-                text: cashManagerWindow.textField
+                text: cashManager.textField
                 horizontalAlignment: Text.AlignHCenter
                 font.pixelSize: 26
             }
@@ -384,7 +384,7 @@ Item {
                 width: 80
                 height: 80
                 text: qsTr("1")
-                onClicked: cashManagerWindow.textField = text
+                onClicked: cashManager.textField = text
                 font.pointSize: 24
             }
 
@@ -393,7 +393,7 @@ Item {
                 width: 80
                 height: 80
                 text: qsTr("2")
-                onClicked: cashManagerWindow.textField = text
+                onClicked: cashManager.textField = text
                 font.pointSize: 24
             }
 
@@ -402,7 +402,7 @@ Item {
                 width: 80
                 height: 80
                 text: qsTr("3")
-                onClicked: cashManagerWindow.textField = text
+                onClicked: cashManager.textField = text
                 font.pointSize: 24
             }
 
@@ -411,7 +411,7 @@ Item {
                 width: 80
                 height: 80
                 text: qsTr("4")
-                onClicked: cashManagerWindow.textField = text
+                onClicked: cashManager.textField = text
                 font.pointSize: 24
             }
 
@@ -420,7 +420,7 @@ Item {
                 width: 80
                 height: 80
                 text: qsTr("5")
-                onClicked: cashManagerWindow.textField = text
+                onClicked: cashManager.textField = text
                 font.pointSize: 24
             }
 
@@ -429,7 +429,7 @@ Item {
                 width: 80
                 height: 80
                 text: qsTr("6")
-                onClicked: cashManagerWindow.textField = text
+                onClicked: cashManager.textField = text
                 font.pointSize: 24
             }
 
@@ -438,7 +438,7 @@ Item {
                 width: 80
                 height: 80
                 text: qsTr("7")
-                onClicked: cashManagerWindow.textField = text
+                onClicked: cashManager.textField = text
                 font.pointSize: 24
             }
 
@@ -447,7 +447,7 @@ Item {
                 width: 80
                 height: 80
                 text: qsTr("8")
-                onClicked: cashManagerWindow.textField = text
+                onClicked: cashManager.textField = text
                 font.pointSize: 24
             }
 
@@ -456,7 +456,7 @@ Item {
                 width: 80
                 height: 80
                 text: qsTr("9")
-                onClicked: cashManagerWindow.textField = text
+                onClicked: cashManager.textField = text
                 font.pointSize: 24
             }
 
@@ -465,7 +465,7 @@ Item {
                 width: 80
                 height: 80
                 text: qsTr("CA")
-                onClicked: cashManagerWindow.textField = text
+                onClicked: cashManager.textField = text
                 checked: false
                 font.pointSize: 24
                 autoExclusive: false
@@ -477,7 +477,7 @@ Item {
                 width: 80
                 height: 80
                 text: qsTr("0")
-                onClicked: cashManagerWindow.textField = text
+                onClicked: cashManager.textField = text
                 checked: false
                 font.pointSize: 24
                 autoExclusive: false
@@ -489,7 +489,7 @@ Item {
                 width: 80
                 height: 80
                 text: qsTr("C")
-                onClicked: cashManagerWindow.textField = text
+                onClicked: cashManager.textField = text
                 checked: false
                 font.pointSize: 24
                 autoExclusive: false

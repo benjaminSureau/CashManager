@@ -11,6 +11,6 @@ string Categorie::getName() {
     return this->name;
 }
 
-float Categorie::getTaxe() {
+double Categorie::getTaxe() {
     return this->taxe;
 }

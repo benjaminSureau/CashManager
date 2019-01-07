@@ -2,7 +2,7 @@
 #include <map>
 #include <string>
 #include "product.h"
-
+#include "listener.h"
 
 Facture* Facture::instance = nullptr;
 
@@ -10,7 +10,10 @@ using namespace std;
 
 Facture::Facture()
 {
-
+    Listener listener;
+    QThread* thread = new QThread;
+    listener.moveToThread(thread);
+    thread->start();
 }
 
 Facture* Facture::getInstance() {
@@ -47,4 +50,8 @@ void Facture::addProduct(Product* p) {
     } else {
         products.insert({p, 1});
     }
+}
+
+void Facture::reinit() {
+    products.clear();
 }
