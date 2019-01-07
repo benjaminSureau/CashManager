@@ -1,4 +1,7 @@
 #include "keypad.h"
+#include <QGuiApplication>
+#include <QQmlApplicationEngine>
+#include <QtQuick>
 #include <QDebug>
 
 Keypad::Keypad(QObject *parent) : QObject(parent)
@@ -25,5 +28,8 @@ QString Keypad::getTextField()
 
 void Keypad::checkUser(const QString &code)
 {
-    qDebug()<<code;
+    //TODO check user id
+    qDebug() << code;
+    QQmlApplicationEngine engine;
+    engine.load(QUrl(QStringLiteral("qrc:/board.qml")));
 }

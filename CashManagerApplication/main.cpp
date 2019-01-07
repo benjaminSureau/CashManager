@@ -13,22 +13,33 @@ int main(int argc, char *argv[])
 
     qmlRegisterType<Keypad>("io.qt.examples.keypad", 1, 0, "Keypad");
 
-    QQmlApplicationEngine engine;
-    engine.load(QUrl(QStringLiteral("qrc:/main.qml")));
+//    QQmlApplicationEngine engine;
+//    engine.load(QUrl(QStringLiteral("qrc:/main.qml")));
 
-    QQmlApplicationEngine view(QUrl(QStringLiteral("qrc:/main.qml")));
-    QObject *rootItem = view.rootObjects().first();
-    QObjectList list = rootItem->children();
-    QObject *rectangle = rootItem->findChild<QObject*>(QString("b_enter"), Qt::FindChildrenRecursively);
-    //QObject *buttonEnter = rectangle->findChild<QObject*>("b_enter");
+//    QObject *rootItem = engine.rootObjects().first();
+//    QObject *button = rootItem->findChild<QQuickItem*>(QString("button"), Qt::FindChildrenRecursively);
+//    //QObject *buttonEnter = rectangle->findChild<QObject*>("b_enter");
 
-    qDebug()<< "test";
-    qDebug()<<rootItem->objectName();
-    qDebug()<< "end";
-    Keypad myClass;
-    QObject::connect(rootItem, SIGNAL(checkUserSignal(QString)),
-                     &myClass, SLOT(checkUser(QString)));
+//    qDebug()<< "test";
+//    qDebug()<<rootItem->objectName();
+//    qDebug()<<rootItem->children();
+//    qDebug()<<button->objectName();
+//    qDebug()<< "end";
+//    Keypad myClass;
+//    QObject::connect(button, SIGNAL(checkUserSignal(QString)),
+//                     &myClass, SLOT(checkUser(QString)));
 
+//    QQmlApplicationEngine engine;
+//    engine.load(QUrl(QStringLiteral("qrc:/board.qml")));
+
+//    QQmlEngine engine;
+//    QQmlComponent component(&engine,
+//            QUrl(QStringLiteral("qrc:/board.qml")));
+//    QObject *object = component.create();
+
+    QQuickView view;
+    view.setSource(QUrl(QStringLiteral("qrc:/main.qml")));
+    view.show();
 
 
     return app.exec();
