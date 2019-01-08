@@ -25,8 +25,8 @@ Categorie* Product::getCategorie() {
 }
 
 
-float Product::getPrixAvecTaxes() {
-    return ((100 + static_cast<float>(this->categorie->getTaxe())) * static_cast<float>(this->prix)) / 100;
+double Product::getPrixAvecTaxes() {
+    return ((100 + this->categorie->getTaxe()) * this->prix) / 100;
 }
 
 bool Product::operator <(const Product& p) const

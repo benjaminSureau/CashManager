@@ -3,6 +3,8 @@
 #include "categorie.h"
 #include "facture.h"
 #include "product.h"
+#include <map>
+
 
 TEST_CASE( "Create and start a game", "[createPlayer]" ) {
     Facture* facture = Facture::getInstance();
