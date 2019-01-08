@@ -19,7 +19,7 @@ using namespace std;
 class Categorie
 {
 public:
-    Categorie(string name, float tax);
+    Categorie(string name, double tax);
 
     /**
      * \fn string getName();
@@ -36,7 +36,7 @@ public:
     double getTaxe();
 private:
     string name;/*!< Nom de la catégorie */
-    float taxe;/*!< Pourcentage de taxe appliquée aux produits de cette catégorie */
+    double taxe;/*!< Pourcentage de taxe appliquée aux produits de cette catégorie */
 };
 
 #endif // CATEGORIE_H

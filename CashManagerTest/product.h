@@ -46,7 +46,7 @@ public:
      *
      * \return Prix avec les taxes
      */
-    float getPrixAvecTaxes();
+    double getPrixAvecTaxes();
 
     /**
      * \fn Categorie* getCategorie();

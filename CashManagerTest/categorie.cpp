@@ -1,6 +1,6 @@
 #include "categorie.h"
 
-Categorie::Categorie(string name, float tax)
+Categorie::Categorie(string name, double tax)
 {
     this->name = name;
     this->taxe = tax;
