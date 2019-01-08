@@ -9,5 +9,3 @@ SOURCES += \
     product.cpp \
     categorie.cpp \
     unittest.cpp
-
-LIBS += -lws2_32

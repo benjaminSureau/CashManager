@@ -5,10 +5,9 @@
 #include "product.h"
 #include <map>
 
+Facture* facture = Facture::getInstance();
 
-TEST_CASE( "Create and start a game", "[createPlayer]" ) {
-    Facture* facture = Facture::getInstance();
-    REQUIRE(facture == nullptr);
+TEST_CASE( "Créer une facture et y ajouter des choses", "[createFacture]" ) {
     Categorie* c;
     c = new Categorie("Alcool", 19.5);
     REQUIRE(c != nullptr);
@@ -46,4 +45,9 @@ TEST_CASE( "Create and start a game", "[createPlayer]" ) {
     Facture::getInstance()->addProduct(p3);
     REQUIRE(Facture::getInstance()->getProducts().size() == 3);
 
+}
+
+TEST_CASE( "Reinitialiser facture", "[reinit]" ) {
+    Facture::getInstance()->reinit();
+    REQUIRE(Facture::getInstance()->getProducts().size() == 0);
 }
