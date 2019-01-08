@@ -82,10 +82,12 @@ QString CashManager::getTextField()
     return textField;
 }
 
-void CashManager::checkUser(const QString &code)
+void CashManager::addProduct(const QString &code)
 {
-    //TODO check user id
+    //TODO check product to BDD
     qDebug() << code;
+
+    //addBill(productName, productPrice);
 }
 
 void CashManager::createBill(const QString &code){

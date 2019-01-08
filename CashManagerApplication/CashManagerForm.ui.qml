@@ -4,6 +4,8 @@ import QtQuick.Controls 2.0
 Item {
     width: 888
     height: 905
+    property alias textField: textField
+    property alias b_enter: b_enter
     property alias b_cards: b_cards
     property alias b_cheques: b_cheques
     property alias b_especes: b_especes
@@ -389,7 +391,8 @@ Item {
             height: 361
             text: qsTr("ENTER")
             font.pointSize: 24
-            objectName: qsTr("button")
+            objectName: qsTr("Enter")
+            signal addProductSignal(string code)
         }
 
         Grid {

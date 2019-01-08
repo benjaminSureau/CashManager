@@ -44,13 +44,14 @@ int main(int argc, char *argv[])
     view.setSource(QUrl(QStringLiteral("qrc:/main.qml")));
     view.show();
     QObject *object = view.rootObject();
-    QObject *button = object->findChild<QQuickItem*>(QString("button"), Qt::FindChildrenRecursively);
+    QObject *b_enter = object->findChild<QQuickItem*>(QString("Enter"), Qt::FindChildrenRecursively);
     QObject *b_createBill = object->findChild<QQuickItem*>(QString("createBill"), Qt::FindChildrenRecursively);
 
     Keypad myClass;
-    QObject::connect(button, SIGNAL(checkUserSignal(QString)),
-                         &myClass, SLOT(checkUser(QString)));
     CashManager myCashManager;
+
+    QObject::connect(b_enter, SIGNAL(addProductSignal(QString)),
+                         &myCashManager, SLOT(addProduct(QString)));
     QObject::connect(b_createBill, SIGNAL(createBillSignal(QString)),
                          &myCashManager, SLOT(createBill(QString)));
     return app.exec();

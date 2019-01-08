@@ -22,6 +22,7 @@ ApplicationWindow {
             b_cheques.highlighted = false
         }
         b_createBill.onClicked: b_createBill.createBillSignal("test")
+        b_enter.onClicked: b_enter.addProductSignal(textField.text)
     }
     CashManager {
         id: cashManager

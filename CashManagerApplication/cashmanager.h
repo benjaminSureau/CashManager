@@ -29,7 +29,7 @@ signals:
     void textFieldChangedTotalBill();
 
 public slots:
-    void checkUser(const QString &code);
+    void addProduct(const QString &code);
     void createBill(const QString &code);
 
 private:
