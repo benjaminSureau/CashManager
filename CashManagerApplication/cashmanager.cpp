@@ -8,7 +8,8 @@ CashManager::CashManager(QObject *parent) : QObject(parent)
 {
     addBill("hello", 22.22);
     addBill("hello2", 289.00);
-    clearBill();
+    bill = new Bill();
+
 }
 
 void CashManager::clearBill(){
@@ -84,13 +85,26 @@ QString CashManager::getTextField()
 
 void CashManager::addProduct(const QString &code)
 {
-    //TODO check product to BDD
-    qDebug() << code;
+    DataBaseHandler *db = new DataBaseHandler();
+    Product *p = db->selectProduct(code);
 
-    //addBill(productName, productPrice);
+    if (p != nullptr){
+        if(currBillId == 0){
+            db->insertBill("card", 2);
+            currBillId = db->selectLastBill()->_id;
+        }
+        Bill::getInstance()->addProduct(p);
+        db->insertBill_Product(currBillId, code, 1);
+        addBill(p->_name, p->getPrixAvecTaxes());
+        setProperty("priceValue", p->_name);
+    }
 }
 
 void CashManager::createBill(const QString &code){
     DataBaseHandler *db = new DataBaseHandler();
-    CreateBill *b = new CreateBill(db, 1);
+    if(currBillId == 0){
+        currBillId = db->selectLastBill()->_id;
+    }
+
+    CreateBill *b = new CreateBill(db, currBillId);
 }

@@ -37,6 +37,8 @@ private:
     QString productName;
     QString priceValue;
     QString totalBill = "0";
+    Bill *bill;
+    int currBillId = 0;
 
     void changeValue(const QString &digit);
     void changeValue2(const QString &digit);

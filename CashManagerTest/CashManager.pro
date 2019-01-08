@@ -1,3 +1,5 @@
+LIBS += -lws2_32
+
 HEADERS += \
     facture.h \
     product.h \

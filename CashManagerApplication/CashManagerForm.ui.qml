@@ -10,6 +10,9 @@ Item {
     property alias b_cheques: b_cheques
     property alias b_especes: b_especes
     property alias b_createBill: b_createBill
+    property alias productName: productName.text
+    property alias priceValue: priceValue.text
+    property alias totalBill: totalBill.text
     Rectangle {
         id: rectangle
         color: "#ffffff"
@@ -61,7 +64,6 @@ Item {
 
                     Text {
                         id: totalBill
-
                         x: 155
                         y: 18
                         width: 226
