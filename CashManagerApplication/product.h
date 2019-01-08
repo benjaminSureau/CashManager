@@ -13,6 +13,7 @@
 
 #include "categorie.h"
 
+using namespace std;
 
 class Product
 {
@@ -23,8 +24,44 @@ public:
     float _price; /*!< price of the product (ht) */
     Categorie *_categorie; /*!< categorie of the product (contains the tax) */
     Product(QString code, QString name, float price, Categorie *categorie);
-    Categorie *getCategorie();
+
     QString toString();
+    /**
+     * \fn string getCode();
+     *
+     * \return Code du produit
+     */
+    string getCode();
+
+    /**
+     * \fn  string getNom();
+     *
+     * \return Nom du caissier
+     */
+    string getNom();
+
+    /**
+     * \fn float getPrix();
+     *
+     * \param Prix sans les taxes
+     */
+    double getPrix();
+
+    /**
+     * \fn float getPrixAvecTaxes();
+     *
+     * \return Prix avec les taxes
+     */
+    float getPrixAvecTaxes();
+
+    /**
+     * \fn Categorie* getCategorie();
+     *
+     * \return Catégorie du produit
+     */
+    Categorie* getCategorie();
+
+    bool operator <(const Product& p) const;
 };
 
 #endif // PRODUCT_H

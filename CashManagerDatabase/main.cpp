@@ -36,6 +36,17 @@ int main(int argc, char *argv[])
     QApplication a(argc, argv);
     DataBaseHandler *db = new DataBaseHandler();
 
-    CreateBill *b = new CreateBill(db, 1);
+    //CreateBill *b = new CreateBill(db, 1);
+    QList<Bill> bills = db->selectAllBill();
+    for(Bill b : bills){
+        std::cout << b.toString().toUtf8().constData() << std::endl;
+    }
+    std::cout << std::endl;
+    db->insertBill("cash", 3);
+    bills = db->selectAllBill();
+    for(Bill b : bills){
+        std::cout << b.toString().toUtf8().constData() << std::endl;
+    }
+
     return a.exec();
 }

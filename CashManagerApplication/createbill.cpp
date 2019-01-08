@@ -17,7 +17,7 @@
 CreateBill::CreateBill(DataBaseHandler *db, int billId)
 {
     QList<Bill_Product> bill = db->selectBill_ProductByBill(billId);
-    QString filename = "C:/Users/43cb886c4537/Documents/cashmanager/CashManager/facture.pdf";
+    QString filename = "../facture.pdf";
     QPrinter printer(QPrinter::PrinterResolution);
     printer.setOutputFormat(QPrinter::NativeFormat);
     printer.setPaperSize(QPrinter::Comm10E);

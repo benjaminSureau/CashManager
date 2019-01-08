@@ -15,3 +15,7 @@ QString Product::toString(){
     qs.append(_categorie->toString());
     return qs;
 }
+
+float Product::getPrixAvecTaxes() {
+    return ((100 + static_cast<float>(this->_categorie->_tax))) * static_cast<float>(this->_price) / 100;
+}
