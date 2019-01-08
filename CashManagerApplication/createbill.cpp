@@ -82,7 +82,7 @@ void CreateBill::addElem(Bill_Product b)
     css += QString::number(b._quantity);
     css += "</div>"
           "<div align=right>";
-    int valArtTot = b._product->_price * b._quantity;
+    float valArtTot = b._product->_price * b._quantity;
     QString num = QString::number(valArtTot);
     css += num;
     css += "€</div>"

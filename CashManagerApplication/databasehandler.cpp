@@ -48,6 +48,21 @@ Bill* DataBaseHandler::selectBill(int id){
     }
 }
 
+Bill* DataBaseHandler::selectLastBill(){
+    if(_cashmanager.isOpen() || _cashmanager.open()){
+        QSqlQuery res(_cashmanager);
+        res.prepare("SELECT * FROM BILL WHERE id=(SELECT MAX(id) FROM BILL)");
+        res.exec();
+        Bill *b;
+        while(res.next()){
+            b = new Bill(res.value(0).toInt(), res.value(1).toDateTime(),
+                              res.value(2).toString(), selectCashier(res.value(3).toInt()));
+        }
+        _cashmanager.close();
+        return b;
+    }
+}
+
 QList<Cashier> DataBaseHandler::selectAllCashier(){
     QList<Cashier> cashiers;
     if(_cashmanager.isOpen() || _cashmanager.open()){

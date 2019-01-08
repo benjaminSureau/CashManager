@@ -48,6 +48,14 @@ public:
      */
     Bill* selectBill(int id);
     /**
+     * \fn Bill* selectLastBill()
+     * \brief select last bill from the database
+     *
+     * \param
+     * \return a bill from the database
+     */
+    Bill* selectLastBill();
+    /**
      * \fn bool insertBill(QString paymentMode, int cashier)
      * \brief inserts the given bill in the db
      *

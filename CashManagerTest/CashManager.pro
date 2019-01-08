@@ -1,3 +1,5 @@
+LIBS += -lws2_32
+
 HEADERS += \
     facture.h \
     product.h \
@@ -7,7 +9,6 @@ HEADERS += \
 
 SOURCES += \
     facture.cpp \
-    main.cpp \
     product.cpp \
     categorie.cpp \
     listener.cpp \
