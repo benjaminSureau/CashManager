@@ -58,33 +58,34 @@ Item {
                     }
 
                     Text {
-                        id: element6
+                        id: totalBill
+
                         x: 155
                         y: 18
                         width: 226
                         height: 19
-                        text: qsTr("0")
+                        text: cashManager.totalBill
                         font.pixelSize: 16
                     }
                 }
 
                 Text {
-                    id: text1
+                    id: productName
                     x: 8
                     y: 15
                     width: 284
                     height: 519
-                    text: cashManager.text1
+                    text: cashManager.productName
                     font.pixelSize: 20
                 }
 
                 Text {
-                    id: text2
+                    id: priceValue
                     x: 309
                     y: 15
                     width: 64
                     height: 519
-                    text: cashManager.text2
+                    text: cashManager.priceValue
                     font.pixelSize: 20
                     horizontalAlignment: Text.AlignRight
                 }

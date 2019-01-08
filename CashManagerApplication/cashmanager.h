@@ -9,19 +9,24 @@ class CashManager: public QObject
 {
     Q_OBJECT
     Q_PROPERTY(QString textField READ getTextField WRITE changeValue NOTIFY textFieldChanged)
-    Q_PROPERTY(QString text1 READ getTextField2 WRITE changeValue2 NOTIFY textFieldChanged2)
-       Q_PROPERTY(QString text2 READ getTextFieldPrice WRITE changeValuePrice NOTIFY textFieldChangedPrice)
+    Q_PROPERTY(QString productName READ getTextField2 WRITE changeValue2 NOTIFY textFieldChanged2) //productName
+    Q_PROPERTY(QString priceValue READ getTextFieldPrice WRITE changeValuePrice NOTIFY textFieldChangedPrice) //priceValue
+    Q_PROPERTY(QString totalBill READ getTextFieldTotalBill WRITE changeValueTotalBill NOTIFY textFieldChangedTotalBill)
+
 public:
     explicit CashManager(QObject *parent = nullptr);
 
     QString getTextField();
     QString getTextField2();
-     QString getTextFieldPrice();
+    QString getTextFieldPrice();
+    QString getTextFieldTotalBill();
      void addBill(QString name, float price);
+     void clearBill();
 signals:
     void textFieldChanged();
     void textFieldChanged2();
     void textFieldChangedPrice();
+    void textFieldChangedTotalBill();
 
 public slots:
     void checkUser(const QString &code);
@@ -29,10 +34,14 @@ public slots:
 
 private:
     QString textField;
-    QString text1;
-    QString text2;
+    QString productName;
+    QString priceValue;
+    QString totalBill = "0";
+
     void changeValue(const QString &digit);
     void changeValue2(const QString &digit);
     void changeValuePrice(const QString &digit);
+    void changeValueTotalBill(const QString &digit);
+
 };
 #endif // CASHMANAGER_H

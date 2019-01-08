@@ -8,38 +8,60 @@ CashManager::CashManager(QObject *parent) : QObject(parent)
 {
     addBill("hello", 22.22);
     addBill("hello2", 289.00);
+    clearBill();
 }
 
+void CashManager::clearBill(){
+    totalBill = "0";
+    emit textFieldChangedTotalBill();
+    productName.clear();
+    emit textFieldChanged2();
+    priceValue.clear();
+    emit textFieldChanged();
+}
 
 void CashManager::addBill(QString name, float price) {
-
     changeValue2(name);
+
+    float total = price + totalBill.toFloat();
     changeValuePrice(QString::number(price));
+    changeValueTotalBill(QString::number(total));
+}
+
+void CashManager::changeValueTotalBill(const QString &digit)
+{
+    totalBill = digit;
+    emit textFieldChangedTotalBill();
+}
+
+QString CashManager::getTextFieldTotalBill()
+{
+    return totalBill;
 }
 
 void CashManager::changeValue2(const QString &digit)
 {
-text1.append("\n");
-    text1.append(digit);
+productName.append("\n");
+    productName.append(digit);
     emit textFieldChanged2();
 }
 
 QString CashManager::getTextField2()
 {
-    return text1;
+    return productName;
 }
 
 void CashManager::changeValuePrice(const QString &digit)
 {
-    text2.append("\n");
+    priceValue.append("\n");
 
-    text2.append(digit+ " €");
+    priceValue.append(digit+ " €");
     emit textFieldChangedPrice();
 }
 
 QString CashManager::getTextFieldPrice()
 {
-    return text2;
+    return priceValue;
 }
 
 
